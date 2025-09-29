@@ -1,9 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-  <title>Můj první web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moje Osobní Stránka</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Ahoj světe z GitHub Pages!</h1>
+
+<header>
+  <h1>Vítejte na mé stránce!</h1>
+  <p>Osobní prezentace s galerií a kontaktem</p>
+</header>
+
+<nav>
+  <a href="#about">O mně</a>
+  <a href="#gallery">Galerie</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="about">
+  <h2>O mně</h2>
+  <p>Jsem nadšenec do webdesignu, milovník přírody a kreativní duše. Tato stránka je ukázkou mé práce a zájmů.</p>
+</section>
+
+<section id="gallery">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/250x150?text=Obrázek+1" alt="Obrázek 1">
+    <img src="https://via.placeholder.com/250x150?text=Obrázek+2" alt="Obrázek 2">
+    <img src="https://via.placeholder.com/250x150?text=Obrázek+3" alt="Obrázek 3">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontaktujte mě</h2>
+  <form>
+    <label for="name">Jméno:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Zpráva:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <input type="submit" value="Odeslat">
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Moje Osobní Stránka</p>
+</footer>
+
 </body>
 </html>
+
