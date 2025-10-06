@@ -1,229 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pěkná HTML stránka</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Svět</title>
   <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#7c5cff;
-      --muted:#9aa4b2;
-      --glass: rgba(255,255,255,0.06);
-      --radius:14px;
-      --maxw:1100px;
-      --ff: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--ff);
-      background:
-        radial-gradient(800px 400px at 10% 10%, rgba(124,92,255,0.12), transparent 8%),
-        radial-gradient(600px 300px at 90% 90%, rgba(0,200,180,0.06), transparent 8%),
-        var(--bg);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:40px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
-
-    .container{
-      width:100%;
-      max-width:var(--maxw);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:20px;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-      padding:32px;
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:28px;
-      align-items:start;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-
-    header{
-      grid-column:1 / -1;
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:6px;
+    nav {
+      background: #374151;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
     }
-
-    .logo{
-      width:56px;
-      height:56px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#24d4b5);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:white;
-      font-size:20px;
-      box-shadow: 0 6px 18px rgba(124,92,255,0.18), inset 0 -6px 18px rgba(0,0,0,0.12);
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
-
-    h1{
-      font-size:20px;
-      margin:0;
-      letter-spacing:0.2px;
+    nav a:hover {
+      text-decoration: underline;
     }
-
-    p.lead{
-      color:var(--muted);
-      margin:8px 0 0 0;
-      font-size:14px;
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-
-    /* Main content */
-    .hero{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.45);
-      border:1px solid rgba(255,255,255,0.03);
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 30px;
     }
-
-    .features{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:14px;
-      margin-top:18px;
+    .card h2 {
+      margin-top: 0;
+      color: #1f2937;
     }
-
-    .feature{
-      background:var(--glass);
-      padding:14px;
-      border-radius:12px;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      border:1px solid rgba(255,255,255,0.02);
-    }
-
-    .icon{
-      width:44px;
-      height:44px;
-      border-radius:10px;
-      background:linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      display:inline-grid;
-      place-items:center;
-      font-weight:700;
-      color:var(--accent);
-      font-size:18px;
-      flex-shrink:0;
-    }
-
-    .feature h4{margin:0;font-size:14px}
-    .feature p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
-
-    /* Sidebar card */
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:16px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.03);
-      position:relative;
-    }
-
-    .hero-cta{
-      display:flex;
-      gap:12px;
-      margin-top:18px;
-      align-items:center;
-    }
-
-    .btn{
-      background:linear-gradient(90deg,var(--accent      ),#24d4b5);
-      border:none;
-      padding:10px 18px;
-      border-radius:10px;
-      color:white;
-      font-weight:600;
-      font-size:14px;
-      cursor:pointer;
-      box-shadow: 0 4px 12px rgba(124,92,255,0.3);
-      transition:background 0.3s ease;
-    }
-
-    .btn:hover{
-      background:linear-gradient(90deg,#24d4b5,var(--accent));
-    }
-
-    .note{
-      font-size:13px;
-      color:var(--muted);
-      margin-top:12px;
-    }
-
-    @media(max-width:900px){
-      .container{
-        grid-template-columns:1fr;
-      }
+    footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">🌟</div>
-      <div>
-        <h1>Vítejte na mé stránce</h1>
-        <p class="lead">Moderní design, elegantní rozvržení a příjemné barvy</p>
-      </div>
-    </header>
+  <header>
+    <h1>IT Svět</h1>
+    <p>Technologie, inovace a budoucnost</p>
+  </header>
 
-    <div class="hero">
-      <h2>O této stránce</h2>
-      <p>Tato stránka byla vytvořena jako ukázka moderního HTML a CSS designu. Využívá skleněný efekt, barevné přechody a responzivní rozvržení, které se přizpůsobí různým velikostem obrazovky.</p>
+  <nav>
+    <a href="#">Domů</a>
+    <a href="#">O IT</a>
+    <a href="#">Kontakt</a>
+  </nav>
 
-      <div class="features">
-        <div class="feature">
-          <div class="icon">💡</div>
-          <div>
-            <h4>Inovativní design</h4>
-            <p>Využívá CSS proměnné, gradienty a stíny pro elegantní vzhled.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="icon">⚙️</div>
-          <div>
-            <h4>Responzivní rozvržení</h4>
-            <p>Stránka se přizpůsobí mobilním zařízením i velkým obrazovkám.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="icon">🎨</div>
-          <div>
-            <h4>Skleněný efekt</h4>
-            <p>Prvky mají průhledný vzhled s jemným pozadím.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="icon">🚀</div>
-          <div>
-            <h4>Rychlé načítání</h4>
-            <p>Minimalistický kód zajišťuje rychlé načtení stránky.</p>
-          </div>
-        </div>
-      </div>
+  <div class="content">
+    <div class="card">
+      <h2>Co je to IT?</h2>
+      <p>Informační technologie (IT) zahrnují systémy pro zpracování, ukládání a přenos dat. Jsou klíčové pro moderní podnikání, komunikaci, vzdělávání i zábavu.</p>
     </div>
 
     <div class="card">
-      <h3>Kontaktujte mě</h3>
-      <p>Máte zájem o spolupráci nebo zpětnou vazbu? Neváhejte mě kontaktovat.</p>
-      <div class="hero-cta">
-        <button class="btn">Napište mi</button>
-        <span class="note">Odpovím co nejdříve</span>
-      </div>
+      <h2>Oblasti IT</h2>
+      <ul>
+        <li>Vývoj software a webových aplikací</li>
+        <li>Správa sítí a serverů</li>
+        <li>Kybernetická bezpečnost</li>
+        <li>Datové analýzy a umělá inteligence</li>
+        <li>Cloudové technologie</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Kontakt</h2>
+      <p>Máte zájem o spolupráci nebo se chcete dozvědět více? Napište nám na <a href="mailto:info@itsvet.cz">info@itsvet.cz</a>.</p>
     </div>
   </div>
-</body>
 
+  <footer>
+    &copy; 2025 IT Svět | Všechna práva vyhrazena
+  </footer>
+</body>
+</html>
