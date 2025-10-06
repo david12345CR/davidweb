@@ -141,4 +141,89 @@
     }
 
     .btn{
-      background:linear-gradient(90deg,var(--accent
+      background:linear-gradient(90deg,var(--accent      ),#24d4b5);
+      border:none;
+      padding:10px 18px;
+      border-radius:10px;
+      color:white;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      box-shadow: 0 4px 12px rgba(124,92,255,0.3);
+      transition:background 0.3s ease;
+    }
+
+    .btn:hover{
+      background:linear-gradient(90deg,#24d4b5,var(--accent));
+    }
+
+    .note{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    @media(max-width:900px){
+      .container{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">🌟</div>
+      <div>
+        <h1>Vítejte na mé stránce</h1>
+        <p class="lead">Moderní design, elegantní rozvržení a příjemné barvy</p>
+      </div>
+    </header>
+
+    <div class="hero">
+      <h2>O této stránce</h2>
+      <p>Tato stránka byla vytvořena jako ukázka moderního HTML a CSS designu. Využívá skleněný efekt, barevné přechody a responzivní rozvržení, které se přizpůsobí různým velikostem obrazovky.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">💡</div>
+          <div>
+            <h4>Inovativní design</h4>
+            <p>Využívá CSS proměnné, gradienty a stíny pro elegantní vzhled.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">⚙️</div>
+          <div>
+            <h4>Responzivní rozvržení</h4>
+            <p>Stránka se přizpůsobí mobilním zařízením i velkým obrazovkám.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🎨</div>
+          <div>
+            <h4>Skleněný efekt</h4>
+            <p>Prvky mají průhledný vzhled s jemným pozadím.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🚀</div>
+          <div>
+            <h4>Rychlé načítání</h4>
+            <p>Minimalistický kód zajišťuje rychlé načtení stránky.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Kontaktujte mě</h3>
+      <p>Máte zájem o spolupráci nebo zpětnou vazbu? Neváhejte mě kontaktovat.</p>
+      <div class="hero-cta">
+        <button class="btn">Napište mi</button>
+        <span class="note">Odpovím co nejdříve</span>
+      </div>
+    </div>
+  </div>
+</body>
+
